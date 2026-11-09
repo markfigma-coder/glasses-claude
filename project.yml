@@ -1,0 +1,35 @@
+name: GlassesClaude
+options:
+  bundleIdPrefix: com.marksimonov
+  deploymentTarget:
+    iOS: "17.2"
+  createIntermediateGroups: true
+
+packages:
+  MetaWearablesDAT:
+    url: https://github.com/facebook/meta-wearables-dat-ios
+    exactVersion: 1.0.1
+
+targets:
+  GlassesClaude:
+    type: application
+    platform: iOS
+    sources:
+      - path: GlassesClaude
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.marksimonov.glassesclaude
+        PRODUCT_NAME: GlassesClaude
+        INFOPLIST_FILE: GlassesClaude/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        # Впиши свой Team ID (Xcode → Signing & Capabilities) или выбери команду в Xcode после генерации
+        DEVELOPMENT_TEAM: ""
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
+    dependencies:
+      - package: MetaWearablesDAT
+        product: MWDATCore
+      - package: MetaWearablesDAT
+        product: MWDATCamera

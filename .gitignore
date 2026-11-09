@@ -1,0 +1,11 @@
+# Проект Xcode генерируется из project.yml командой xcodegen
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+build/
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
